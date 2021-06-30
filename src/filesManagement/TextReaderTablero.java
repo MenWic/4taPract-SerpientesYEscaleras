@@ -12,7 +12,7 @@ import players.*;
  */
 public class TextReaderTablero {
     
-    //Variables globales de la clase
+    //Variables globales de la clase para lectura de presets en .txt
     private int filas;
     private int columnas;
     private int filaPierdeTurno;
@@ -39,10 +39,19 @@ public class TextReaderTablero {
     private int columnaFinalSubida;
     Tablero tablero;
 
+    /**
+     * Metodo leerTexto
+     * @param Archivo pide como parametro "archivo" leido por JFileChooser
+     * @throws FileNotFoundException 
+     * @throws IOException 
+     * <- Excepciones empleadas
+     */
+    //Metodo para leer documento .txt 
     public void leerTexto(File Archivo) throws FileNotFoundException, IOException {
         FileReader fr = new FileReader(Archivo);
         BufferedReader br = new BufferedReader(fr);
         String linea;
+        //Bucle de repeticion mientras linea no contenga nada
         while ((linea = br.readLine())!=null) {
             try {
                 separarCampos(linea);
@@ -50,11 +59,13 @@ public class TextReaderTablero {
                 e.printStackTrace();
             }
         }
+        //Iniciacion de variable tablero para guardar un preset de Tablero a usar en partida
         tablero = new Tablero(filas,columnas,filaPierdeTurno,columnaPierdeTurno,filaTiraDado,columnaTiraDado,filaAvanza,columnaAvanza,cantPosicionesAvanza,filaRetrocede,columnaRetrocede,cantPosicionesRetrocede,filaInicialSubida,columnaInicialSubida,filaFinalSubida,columnaFinalSubida,filaInicialRetroceso,columnaInicialRetroceso,filaFinalRetroceso,columnaFinalRetroceso);
         CrearTablero crearTablero=new CrearTablero(tablero);
         crearTablero.construirTableroPanel();
     }
 
+    //Metodo de separacion de campos dados en .txt
     public void separarCampos(String linea) {
         String inicioTablero = "tablero(";
         String inicioPierdeTurno = "pierdeTurno(";
@@ -72,7 +83,6 @@ public class TextReaderTablero {
             filas =Integer.valueOf(campos[0]);
             columnas=Integer.valueOf(campos[1]);
         }
-
         if (linea.contains(inicioPierdeTurno)) {
             String lineaDeCampos = linea.substring(inicioPierdeTurno.length(), linea.length()-1);
             String[] campos = lineaDeCampos.split(",");
@@ -80,7 +90,6 @@ public class TextReaderTablero {
             filaPierdeTurno =Integer.valueOf(campos[0]);
             columnaPierdeTurno= Integer.valueOf(campos[1]);
         }
-
         if (linea.contains(inicioTiraDados)) {
             String lineaDeCampos = linea.substring(inicioTiraDados.length(), linea.length()-1);
             String[] campos = lineaDeCampos.split(",");
@@ -88,7 +97,6 @@ public class TextReaderTablero {
             filaTiraDado =Integer.valueOf(campos[0]);
             columnaTiraDado =Integer.valueOf(campos[1]);
         }
-
         if (linea.contains(inicioAvanza)) {
             String lineaDeCampos = linea.substring(inicioAvanza.length(), linea.length()-1);
             String[] campos = lineaDeCampos.split(",");
@@ -97,7 +105,6 @@ public class TextReaderTablero {
             columnaAvanza=Integer.valueOf(campos[1]);
             cantPosicionesAvanza = Integer.valueOf(campos[2]);
         }
-
         if (linea.contains(inicioRetrocede)) {
             String lineaDeCampos = linea.substring(inicioRetrocede.length(), linea.length()-1);
             String[] campos = lineaDeCampos.split(",");

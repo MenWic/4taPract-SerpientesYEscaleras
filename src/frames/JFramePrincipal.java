@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package frames;
 
 import filesManagement.*;
@@ -15,7 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 //import manejoArchivos.CargarUsuarioBInario;
 //import manejoArchivos.LectorTableroEnTexto;
-//import usuario.ConstructorTablero;
+//import usuario.ConstructorTablero;            YA NO LOS USE :(
 //import usuario.Ficha;
 //import usuario.Usuario;
 import java.lang.Object;
@@ -376,6 +371,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Metodo InicializarLabelNombres: torna setVisible a false para que se muestran unicamente 
+     * al ingresar jugadores a partida
+     */
     //Metodo para inicializar Nombres de Jugadores (sin ser visible)
     public void inicializarLabelNombres() {
         jLabel1.setVisible(false);
@@ -411,7 +410,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         reportesFrame.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-
+    /**
+     * JugarButton: boton para cargar el archivo de texto para la creacion de tablero
+     * @param evt  
+     */
     private void jugarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jugarjButtonActionPerformed
         JFileChooser fileChosser = new JFileChooser();
         int seleccion = fileChosser.showOpenDialog(this);
@@ -430,7 +432,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jugarjButtonActionPerformed
-
+    /**
+     * Menu item boton para jugar, ingresa players y colores para jugar
+     * @param evt 
+     */
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         int contador = 0;
         String color = null;
@@ -492,6 +497,13 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
     JLabel imagen;
     Ficha ficha =new Ficha();
+    
+    /**
+     * Funcion elegirColor
+     * @param color recibe como parametro un String que evalula la disponibilidad del color y lo imprime 
+     * posicion de Incio en la casilla de Inicio de TableroPanel
+     * @return regresa un label de imagen
+     */
     public JLabel elegirColor(String color){
         if(color.equals("Rojo") && rojoDisponible==true){
             colorCorrecto=true;
@@ -530,7 +542,12 @@ public class JFramePrincipal extends javax.swing.JFrame {
         }
         return imagen;
     }
-    
+    /**
+     * Metodo ponerNombres
+     * @param i parametro de tipo int para ingresar el nombre de cada jugador a JLabel de jugador 1,2,3...
+     * @param nombre parametro de nombre para ponerlo en el JLabel correspondiente y hacerlo visible
+     * @param color  parametro de color para ponerlo en el JLabel correspondiente y hacerlo visible
+     */
     public void ponerNombres(int i, String nombre,String color) {
         if (i == 0) {
             jugador1jLabel.setText(nombre);
@@ -576,6 +593,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * boton para minimizar cerrar la ventana JFramePrincipal
+     * @param evt 
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

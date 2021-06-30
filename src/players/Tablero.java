@@ -31,6 +31,29 @@ public class Tablero {
     private int filaFinalRetroceso;
     private int columnaFinalRetroceso;
     
+    /**
+     * Constructor con los parametros para crear un nuevo Tablero
+     * @param filas
+     * @param columnas
+     * @param filaPierdeTurno
+     * @param columnaPierdeTurno
+     * @param filaTiraDado
+     * @param columnaTiraDado
+     * @param filaAvanza
+     * @param columnaAvanza
+     * @param cantPosicionesAvanza
+     * @param filaRetrocede
+     * @param columnaRetrocede
+     * @param cantPosicionesRetrocede
+     * @param filaInicialSubida
+     * @param columnaInicialSubida
+     * @param filaFinalSubida
+     * @param columnaFinalSubida
+     * @param filaInicialRetroceso
+     * @param columnaInicialRetroceso
+     * @param filaFinalRetroceso
+     * @param columnaFinalRetroceso 
+     */
     //Constructor de Tablero's
     public Tablero(int filas, int columnas, int filaPierdeTurno, int columnaPierdeTurno, int filaTiraDado, int columnaTiraDado, int filaAvanza, int columnaAvanza, int cantPosicionesAvanza, int filaRetrocede, int columnaRetrocede, int cantPosicionesRetrocede, int filaInicialSubida, int columnaInicialSubida, int filaFinalSubida, int columnaFinalSubida, int filaInicialRetroceso, int columnaInicialRetroceso, int filaFinalRetroceso, int columnaFinalRetroceso) {
         this.filas = filas;

@@ -225,11 +225,15 @@ public class JFrameLogIn extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "El ID no puede contener letras");
         }
     }//GEN-LAST:event_idjTextFieldKeyTyped
-
+    /**
+     * Metodo registrarse
+     * @param evt boton para registra al player, evaula si algun campo esta vacio y lo envia 
+     * a la clase SavePlayerBinario que guarda en binarios la informacion
+     */
     //Metodo para registrar y guardar al Jugador
     private void registrarsejButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarsejButtonActionPerformed
 
-        //Uso de try-catch para capturar 
+        //Uso de try-catch
         try { 
             ArrayList<Player> players = new ArrayList<>();
             String nombre = nombrejTextField.getText();
@@ -254,7 +258,7 @@ public class JFrameLogIn extends javax.swing.JFrame {
 
     }//GEN-LAST:event_registrarsejButtonActionPerformed
     
-    //Boton para salir del JFrame
+    //Boton para salir del JFrameLogIn
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -271,6 +275,10 @@ public class JFrameLogIn extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_idjTextFieldActionPerformed
 
+    /**
+     * Metodo limpiraCampos: accede a los textfield's que se llenaron para registrar a u player
+     * y limpia lo escrito en dicho registro para dejar todo limpio para el siguiente registro
+     */
     public void limpiarCampos() {
         nombrejTextField.setText("");
         apellidojTextField.setText("");

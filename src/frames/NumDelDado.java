@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package frames;
 
 import javax.swing.ImageIcon;
@@ -17,11 +12,18 @@ public class NumDelDado {
     private ImageIcon icono;
     private ImageIcon iconoFinal;
     
+    /**
+        *Funcion gifDado
+        *animacion de dado gif, unicamnete utilizado  para mostrar animacion del dado
+    */
+    //Metodo que devuelve variable icono que se llama al presionar el JButton de tirar dado en JFramePrincipal
     public ImageIcon gifDado(){    
         icono = new javax.swing.ImageIcon(getClass().getResource("/imagenes/dados1.gif"));         
-        return icono;
+        return icono; //Retorna 
     }
     
+    //Metodo para obtener y mostrar una imagen segun sea el numero obtenido por el metodo obtenerNum 
+    // guardado en la variable Valor, de la clase Dado
     public ImageIcon dadoResultante(int dado){
         switch(dado){
             case 1: 

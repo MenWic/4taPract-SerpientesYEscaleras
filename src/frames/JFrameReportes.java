@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package frames;
 
 import filesManagement.*;
@@ -146,12 +141,21 @@ public class JFrameReportes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * metodo para cerrar el JFrameReportes
+     * @param evt 
+     */
     //Boton para salir del JFrame
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    /**
+     * Boton para ver players, busca los players en los archivos binarios de Jugadores\ y los 
+     * imprime en un tabla
+     * @param evt 
+     */
     private void verUsuariosjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verUsuariosjButtonActionPerformed
         
         try {

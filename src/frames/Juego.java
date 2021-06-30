@@ -39,7 +39,10 @@ public class Juego {
     int contadorj4;
     int contadorj5;
     int contadorj6;
-    /* 
+    
+    /**
+     * Constructor de la clase Juego, inicializa las posisciones de las fihcas en X y Y 
+     * y se inicializa arrayLista de players y fichas para los jugadores de la partida
      */
     public Juego() {
         players = new ArrayList<>();
@@ -58,15 +61,26 @@ public class Juego {
         posicionYJ6 = CrearTablero.getTablero().getFilas() - 1;
         turnoDisponible = true;
     }
-
+    /**
+     * 
+     * @param player recibe el parametro players de la clase JFramePrincipal, 
+     * al pedir nombre y cantidad de jugadores
+     * @param ficha  recible un JLabel para poder tener el usuarioa y la ficha 
+     * en un mismo indice de los ArrayList
+     */
+    //Metodo para registrar jugadores en JFrameLogIn
     public void registrarJugadores(Player player, JLabel ficha) {
         players.add(player);
         fichas.add(ficha);
     }
-
-    public void Jugar(int numero) {
+    /**
+     * Metodo jugar: realiza los turnos de jugadores en la partida
+     */
+    //Metodo de incio de turno en la partida
+    public void Jugar(int numero) { //El parametro int numero no se usa de momento
         ganador = false;
         try {
+            //Hacer mientras se realicen las condicionantes (No es necesario que se llenen los 6 espacios
             while (ganador != true) {
                 if (players.get(0) != null && turnoDisponible == true) {
                     turnoJugador1(players.get(0), fichas.get(0));
@@ -103,6 +117,12 @@ public class Juego {
     //Metodo de Turnos en el Juego
     public void turnos(Player player) {
     }
+    
+    /**
+     * Metodo TurnoJugador1 
+     * @param player Recibie como parametro un player para mostrar el nombre e instrucciones
+     * @param ficha  recibe como parametro un label para mover la ficha 
+     */
     //Turnos de Jugadores en partida
     public void turnoJugador1(Player player, JLabel ficha) {
         contadorj1 = 0;
@@ -139,7 +159,11 @@ public class Juego {
             });
         }
     }
-
+    /**
+     * Metodo TurnoJugador2 
+     * @param player Recibie como parametro un player para mostrar el nombre e instrucciones
+     * @param ficha  recibe como parametro un label para mover la ficha 
+     */
     public void turnoJugador2(Player player, JLabel ficha) {
         contadorj2 = 0;
         turnoDisponible=false;
@@ -174,7 +198,11 @@ public class Juego {
             });
         }
     }
-
+    /**
+     * Metodo TurnoJugador3
+     * @param player Recibie como parametro un player para mostrar el nombre e instrucciones
+     * @param ficha  recibe como parametro un label para mover la ficha 
+     */
     public void turnoJugador3(Player player, JLabel ficha) {
         contadorj3 = 0;
         girarDadotJButton.setEnabled(true);
@@ -210,7 +238,11 @@ public class Juego {
             });
         }
     }
-
+    /**
+     * Metodo TurnoJugador4
+     * @param player Recibie como parametro un player para mostrar el nombre e instrucciones
+     * @param ficha  recibe como parametro un label para mover la ficha 
+     */
     public void turnoJugador4(Player player, JLabel ficha) {
         contadorj4 = 0;
         turnoDisponible=false;
@@ -244,7 +276,11 @@ public class Juego {
             });
         }
     }
-
+    /**
+     * Metodo TurnoJugador5
+     * @param player Recibie como parametro un player para mostrar el nombre e instrucciones
+     * @param ficha  recibe como parametro un label para mover la ficha 
+     */
     public void turnoJugador5(Player player, JLabel ficha) {
         contadorj5 = 0;
         turnoDisponible=false;
@@ -279,7 +315,11 @@ public class Juego {
             });
         }
     }
-
+    /**
+     * Metodo TurnoJugador6
+     * @param player Recibie como parametro un player para mostrar el nombre e instrucciones
+     * @param ficha  recibe como parametro un label para mover la ficha 
+     */
     public void turnoJugador6(Player player, JLabel ficha) {
         contadorj6 = 0;
         turnoDisponible=false;
@@ -313,7 +353,13 @@ public class Juego {
             });
         }
     }
-
+    /**
+     * metodo buscarGanador
+     * @param ficha  recibe un label como parametro para evaluarla si esta llego a posicio 0,0 
+     * @param player recibe al player si llego a 0,0 usar el setPartGanadas++ (incrementa 1)
+     * @return retorna  un boolean ganador para terminar el while del turno actual iniciado con el
+     * metodo Juego.jugar
+     */
     public boolean buscarGanador(JLabel ficha, Player player) {
         if (CrearTablero.getTableroPanel()[0][0].getComponents().equals(ficha)) {
             JOptionPane.showMessageDialog(null, " El Ganador: " + player.getNombre());
@@ -325,7 +371,10 @@ public class Juego {
         }
        return ganador;
     }
-    
+    /**
+     * Metodo que envia int de partidas jugadas, ganadas y perdidas a los jugadores para luego
+     * poder mostrar actualizada la tabla de reportes
+     */
     public void enviarReportes() {
         for (int i = 0; i < players.size(); i++) {
             players.get(i).setPartJugadas(1);

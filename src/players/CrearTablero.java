@@ -13,6 +13,7 @@ public class CrearTablero {
     private static Tablero tablero; //Tablero como tal
     private static JPanel[][] tableroPanel; //Es un panel que contendrá a varias fichas en una casilla para no sobreponer imagen sobre imagen
     
+    //Constructor de tablero general
     public CrearTablero(Tablero tablero){
         this.tablero=tablero;
     }
@@ -24,7 +25,11 @@ public class CrearTablero {
     public static JPanel[][] getTableroPanel() {
         return tableroPanel;
     }
-    
+    /**
+     * Metodo que constuye un tablero a partir de los lineamientos 
+     * para tablero brindados con el archivo de texto que se leera
+     */
+    //Constructor de TableroPanel (un tablero hecho de casillas de tipo  JPanel)
     public static  void construirTableroPanel(){
         //Variables para coordenadas y tamaño del TableroPanel
         int x=10;
@@ -42,10 +47,10 @@ public class CrearTablero {
                 tableroPanel[i][j].setOpaque(true);
                 tableroPanel[i][j].setBackground(Color.MAGENTA);
                 if(i==0 &&j==0){
-                    tableroPanel[0][0].add(new JLabel(" META "));
+                    tableroPanel[0][0].add(new JLabel(" META ")); //Casilla final
                 } 
-                else if ((i+1)==tablero.getFilas() && (j+1)==tablero.getColumnas()){
-                    tableroPanel[i][j].add(new JLabel(" START "));   
+                else if ((i+1)==tablero.getFilas() && (j+1)==tablero.getColumnas()){ 
+                    tableroPanel[i][j].add(new JLabel(" START ")); //Casilla de inicio
                 } 
                 else {
                     tableroPanel[i][j].add(new JLabel(tablero.getColumnas()*tablero.getFilas()-j-pos+""));

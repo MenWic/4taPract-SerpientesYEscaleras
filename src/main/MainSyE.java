@@ -13,7 +13,8 @@ import frames.JFrameInicio;
  */
 public class MainSyE {
     /**
-     * @param args the command line arguments
+     *Metodo main del proyecto 
+     * @param args 
      */
     public static void main(String[] args) {
         //Metodo Main principal del programa

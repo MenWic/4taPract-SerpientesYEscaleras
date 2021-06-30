@@ -31,8 +31,11 @@ public class Ficha {
         fichaNegra();
         fichaRoja();
     }
-    
-    //Constructor Ficha Amarilla
+    /**
+     * Funcion ficha Amarilla: retorna el label amarillo
+     * @return 
+     */
+        //Constructor Ficha Amarilla
     public JLabel fichaAmarilla(){
         colorAmarillo=new javax.swing.ImageIcon(getClass().getResource("/imagenes/amarillo.png"));
         fichaAmarilla=new JLabel(colorAmarillo);
@@ -40,6 +43,10 @@ public class Ficha {
         return fichaAmarilla;
     }
     
+    /**
+     * Funcion ficha Roja: retorna el label rojo
+     * @return 
+     */
     //Constructor Ficha Roja
     public JLabel fichaRoja(){
         colorRojo=new javax.swing.ImageIcon(getClass().getResource("/imagenes/rojo.png"));
@@ -49,14 +56,22 @@ public class Ficha {
         return fichaRoja;
     }
     
+    /**
+     * Funcion ficha Negra: retorna el label negro
+     * @return 
+     */
     //Constructor Ficha Negra
     public JLabel fichaNegra(){
         colorNegro=new javax.swing.ImageIcon(getClass().getResource("/imagenes/negro.png"));
         fichaNegra=new JLabel(colorNegro);
         fichaNegra.setIcon(colorNegro);
         return fichaNegra;
-    }  
+    }
     
+    /**
+     * Funcion ficha Naranja: retorna el label naranja
+     * @return 
+     */
     //Constructor Ficha Anaranjada
     public JLabel fichaNaranja(){
         colorNaranja=new javax.swing.ImageIcon(getClass().getResource("/imagenes/naranja.png"));
@@ -65,6 +80,10 @@ public class Ficha {
         return fichaNaranja;
     }
     
+    /**
+     * Funcion ficha Blanca: retorna el label blanco
+     * @return 
+     */
     //Constructor Ficha Blanca
     public JLabel fichaBlanca(){
         colorBlanco=new javax.swing.ImageIcon(getClass().getResource("/imagenes/blanco.png"));
@@ -73,6 +92,10 @@ public class Ficha {
         return fichaBlanca;
     }
     
+    /**
+     * Funcion ficha Azul: retorna el label azul
+     * @return 
+     */
     //Constructor Ficha Azul
     public JLabel fichaAzul(){
         colorAzul=new javax.swing.ImageIcon(getClass().getResource("/imagenes/azul.png"));
@@ -81,7 +104,8 @@ public class Ficha {
         return fichaAzul;
     }
 
-    //Getters de Label's Ficha que iran dentro de un panel contenido en las casillas del array del tablero para cuando esten todas las fichas en una casilla
+    //Getters de Label's Ficha que iran dentro de un panel contenido en las 
+    //casillas del array del tablero para cuando esten todas las fichas en una casilla
     public static JLabel getFichaAmarilla() {
         return fichaAmarilla;
     }

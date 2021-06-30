@@ -42,26 +42,28 @@ public class JFrameInicio extends javax.swing.JFrame {
         jPanel1.setToolTipText("");
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButton1.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
         jButton1.setText("Jugar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 120, 50));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 160, 50));
 
-        registrarjButton.setText("Registrar Usuario");
+        registrarjButton.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
+        registrarjButton.setText("Registrar Jugador");
         registrarjButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registrarjButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(registrarjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, -1, 50));
+        jPanel1.add(registrarjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 160, 60));
 
         jLabel2.setFont(new java.awt.Font("Dubai", 3, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 102, 102));
         jLabel2.setText("Bienvenido");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 240, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 240, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo2.jpeg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 520));
@@ -85,11 +87,19 @@ public class JFrameInicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * JButton: hace visible la ventana de JFramePrincipal
+     * @param evt 
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         principal.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    /**
+     * JButton: hace visible la ventana de JFrameLogIn
+     * @param evt 
+     */
     private void registrarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarjButtonActionPerformed
         login.setVisible(true);
     }//GEN-LAST:event_registrarjButtonActionPerformed

@@ -14,6 +14,15 @@ public class Player implements Serializable{
     private int partGanadas;
     private int partPerdidas;
    
+    /**
+     * Constructor que recibe parametros para crear un nuevo usuario
+     * @param nombre
+     * @param apellido
+     * @param id
+     * @param partJugadas
+     * @param partGanadas
+     * @param partPerdidas 
+     */
     //Constructor de Player's
     public Player(String nombre, String apellido, int id, int partJugadas, int partGanadas, int partPerdidas) {
         //Inicialización con referencia "this"
